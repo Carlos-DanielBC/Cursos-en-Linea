@@ -8,3 +8,7 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Comment(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField(max_length=1000)

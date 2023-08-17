@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Curso
 
+def home(request):
+    return render(request, 'home.html')
+
+
 def lista_cursos(request):
     cursos = Curso.objects.all()
     return render(request, 'Gestion_de_curso/lista_cursos.html', {'cursos': cursos})

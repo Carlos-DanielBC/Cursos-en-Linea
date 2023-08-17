@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styleHome.css' %}">
+    <title>Home</title>
+</head>
+<body class="body">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="header">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/home/">E_Learning</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="/home/">Home</a>
+              <a class="nav-link" href="/crear_curso/">Maestros</a>
+              <a class="nav-link" href="#">Estudiantes</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {% block creacionCurso %}
+        
+      {% endblock %}
+      <div class="contentC">
+        <form action="/comment" method="post" class="formC">
+            <input type="text" name="title" placeholder="Titulo" class="titulo">
+            <textarea name="comment" id="" cols="30" rows="10"  placeholder="Asunto" class="comentario"></textarea>
+            <!-- <input type="text" name="comment" placeholder="Asunto" class="comentario"> -->
+            <button type="submit" class="botonC">Comment</button>
+        </form>
+      </div>
+      <footer>
+        <ul>
+          <li>walner</li>
+          <li>Genesis</li>
+          <li>Daniel</li>
+        </ul>
+      </footer>
+</body>
+</html>

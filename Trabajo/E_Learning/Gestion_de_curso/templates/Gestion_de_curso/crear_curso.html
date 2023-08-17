@@ -1,9 +1,14 @@
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <input type="text" name="titulo">
-    <input type="text" name="descripcion">
-    <input type="text" name="nivel_dificultad">
-    <input type="file" name="materiales_educativos">
+{% extends 'home.html' %}
 
-    <button type="submit">Crear Curso</button>
-</form>
+{% block creacionCurso %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="titulo">
+        <input type="text" name="descripcion">
+        <input type="text" name="nivel_dificultad">
+        <input type="file" name="materiales_educativos">
+
+        <button type="submit">Crear Curso</button>
+    </form>
+{% endblock %}
+
