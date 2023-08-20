@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import CursoForm  # Importa el formulario CursoForm
 from .models import Curso
+from .models import User
+
 
 def crear_curso(request):
     if request.method == 'POST':
@@ -12,3 +14,5 @@ def crear_curso(request):
         form = CursoForm()  # Crea una instancia vacía de CursoForm para el método GET
 
     return render(request, 'Gestion_de_curso/crear_curso.html', {'form': form})
+
+

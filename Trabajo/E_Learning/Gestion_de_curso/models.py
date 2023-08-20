@@ -1,4 +1,5 @@
 from django.db import models
+# from inscriptions.models import Inscripcion
 
 class Curso(models.Model):
     titulo = models.CharField(max_length=200)
@@ -9,6 +10,17 @@ class Curso(models.Model):
     def __str__(self):
         return self.titulo
 
+class User(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=100)
+    correo = models.EmailField(max_length=200, unique=True)
+    identidad = models.CharField(max_length=20)
+    contraseña = models.CharField(max_length=300)
+    
+    def __str__(self):
+        return self.nombre
+
 class Comment(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=1000)
+    

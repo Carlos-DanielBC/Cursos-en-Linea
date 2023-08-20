@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style_user.css' %}">
+    <link rel="stylesheet" href="style_user.css">
+    <title>Sign up</title>
+</head>
+<body style="display: flex; flex-direction: column;">
+    {{error}}
+    <form class="form-box" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="register-container" id="register">
+            <div class="top">
+                <header>SIGN UP</header>
+                <br>
+                <span>Have an account? <a href="{% url 'sesion' %}" onclick="login()">Login</a></span>
+            </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" name="nombre" placeholder="Nombre" required>
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" name="apellido" placeholder="Apellido" required>
+                    <i class="bx bx-user"></i>
+                </div>
+                </div>
+                <div class="input-box">
+                    <input type="email" class="input-field" name="correo" placeholder="Email" required>
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" name="contraseña" placeholder="Contraseña" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div >
+                    <label for="">Ingresar como..</label><br>
+                    <select name="identidad" id="identidad" required>
+                        <option value="estudiante">Estudiante</option>
+                        <option value="maestro">Maestro</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <button type="submit" class="submit">Register</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style_user.css' %}">
+    <title>Sign in</title>
+</head>
+<body style="display: flex; flex-direction: column;">
+    {{error}}
+    <form class="form-box" method="post" name="form">
+        {% csrf_token %}
+        <div class="login-container" id="login">
+            <div class="top">
+                <header>LOGIN</header>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" name="nombre" placeholder="Username" required>
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" name="contraseña" placeholder="Password" required>
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <a class="nav-link" href="/Register/">Registrar</a>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Sign In">
+            </div>
+            {% comment %} <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    
+                    <label for="login-check"> Remember Me</label>
+                </div>
+                
+            </div> {% endcomment %}
+        </div>
+    </form>
+</body>
+</html>

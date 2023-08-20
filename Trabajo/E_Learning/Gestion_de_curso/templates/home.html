@@ -18,8 +18,13 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="/home/">Home</a>
-              <a class="nav-link" href="/crear_curso/">Maestros</a>
-              <a class="nav-link" href="#">Estudiantes</a>
+              {% if user.is_authenticated and user.first_name == "maestro"%}
+                  <a class="nav-link" href="/crear_curso/">Maestros</a>
+              {% endif %}
+              {% if user.is_authenticated and user.first_name == "estudiante"%}
+                <a class="nav-link" href="#">Estudiantes</a>
+              {% endif %}
+              <a class="nav-link" href="/logout/  ">Logout</a>
             </div>
           </div>
         </div>
@@ -28,19 +33,13 @@
         
       {% endblock %}
       <div class="contentC">
-        <form action="/comment" method="post" class="formC">
+        <form method="post" enctype="multipart/form-data" class="formC">
+            {% csrf_token %}
             <input type="text" name="title" placeholder="Titulo" class="titulo">
             <textarea name="comment" id="" cols="30" rows="10"  placeholder="Asunto" class="comentario"></textarea>
             <!-- <input type="text" name="comment" placeholder="Asunto" class="comentario"> -->
             <button type="submit" class="botonC">Comment</button>
         </form>
       </div>
-      <footer>
-        <ul>
-          <li>walner</li>
-          <li>Genesis</li>
-          <li>Daniel</li>
-        </ul>
-      </footer>
 </body>
 </html>
