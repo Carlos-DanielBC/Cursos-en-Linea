@@ -1,0 +1,44 @@
+{% extends 'home.html' %}
+{% block creacionCurso %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styleHome.css' %}">
+<div class="centro">
+    <div class="pastelContent" style="display: flex; flex-direction: column; align-items: center; margin: 50px;">
+        <h2>Todos los Usuarios registrados</h2>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script>
+    const xValues = ["Todos", "Estudiantes", "Maestros"];
+    let yValues; // Almacenará los datos que obtengas del controlador
+    const barColors = [
+        "#00aba9",
+        "#b91d47",
+        "#2b5797",
+   
+    ];
+
+    // Realizar la solicitud AJAX para obtener los datos desde el controlador
+    fetch('/obtener-datos-grafico/')
+        .then(response => response.json())
+        .then(data => {
+            yValues = Object.values(data);
+
+            new Chart("myChart", {
+                type: "doughnut",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+            });
+        })
+        .catch(error => {
+            console.error('Error al obtener los datos:', error);
+        });
+</script>
+
+{% endblock %}

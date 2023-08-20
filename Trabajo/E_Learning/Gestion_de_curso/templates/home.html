@@ -24,7 +24,8 @@
               {% if user.is_authenticated and user.first_name == "estudiante"%}
                 <a class="nav-link" href="#">Estudiantes</a>
               {% endif %}
-              <a class="nav-link" href="/logout/  ">Logout</a>
+              <a class="nav-link" href="/lista/">Lista Cursos</a>
+              <a class="nav-link" href="/logout/">Logout</a>
             </div>
           </div>
         </div>
@@ -40,6 +41,20 @@
             <!-- <input type="text" name="comment" placeholder="Asunto" class="comentario"> -->
             <button type="submit" class="botonC">Comment</button>
         </form>
+      </div>
+      <div class="padreComment">
+        {% for dato in datos %}
+          <section id="contentComment">
+              <div class="datosUser">
+                  <h2>{{ dato.nombre_user}}</h2>
+                  <h4 class="{% if dato.identidad_user == 'maestro' %}maestro{% else %}estudiante{% endif %}">{{ dato.identidad_user }}</h4>
+              </div>
+              <div class="textoComment">
+                  <h1>{{ dato.title }}</h1>
+                  <p>{{ dato.description }}</p>
+              </div>
+          </section>
+      {% endfor %}
       </div>
 </body>
 </html>

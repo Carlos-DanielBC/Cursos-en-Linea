@@ -1,5 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .body{
     background-color: rgb(195, 195, 195);
+    
 }
 #header{
     background-color: rgb(83, 89, 89) !important;
@@ -14,7 +22,7 @@
     height: auto;
 }
 .formC{
-    width: 100%;
+    width: 75%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -38,4 +46,56 @@
     width: 200px;
     border-radius: 10px;
     background-color: aqua;
+}
+.pastelContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*--------------------style comment -----------------------------*/
+.padreComment{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+}
+#contentComment{
+    background-color: white;
+    width: 70%;
+    padding: 30px;
+    border-radius: 20px;
+    height: auto;
+}
+.datosUser{
+    display: flex;
+    justify-content: space-between;
+}
+.datosUser h2{
+    font-weight: 700;
+}
+.maestro {
+    font-weight: 600;
+    color: rgb(207, 120, 21);
+}
+.estudiante {
+    font-weight: 600;
+    color: rgb(111, 38, 135);
+}
+
+.textoComment{
+    padding: 10px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 10px;
+    height: auto;
+}
+
+.textoComment h1{
+    color: rgb(26, 92, 127);
+}
+.textoComment p{
+    color: white;
 }

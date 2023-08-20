@@ -1,0 +1,8 @@
+{% extends 'home.html' %}
+{% block creacionCurso %}
+    {% for curso in cursos %}
+    <h2>{{ curso.titulo }}</h2>
+    <p>{{ curso.descripcion }}</p>
+    <!-- Mostrar otros detalles del curso -->
+    {% endfor %}
+{% endblock %}

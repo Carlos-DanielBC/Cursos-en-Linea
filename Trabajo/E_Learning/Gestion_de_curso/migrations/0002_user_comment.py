@@ -25,7 +25,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Comment',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('nombre_user', models.CharField(max_length=200)),
+                ('identidad_user', models.CharField(max_length=200)),
                 ('title', models.CharField(max_length=200)),
                 ('description', models.TextField(max_length=1000)),
             ],

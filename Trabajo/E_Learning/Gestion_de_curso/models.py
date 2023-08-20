@@ -21,6 +21,10 @@ class User(models.Model):
         return self.nombre
 
 class Comment(models.Model):
+    nombre_user = models.CharField(max_length=200)
+    identidad_user = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=1000)
     
+    def __str__(self):
+        return self.title
