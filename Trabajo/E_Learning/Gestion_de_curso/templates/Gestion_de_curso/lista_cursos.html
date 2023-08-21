@@ -4,5 +4,6 @@
     <h2>{{ curso.titulo }}</h2>
     <p>{{ curso.descripcion }}</p>
     <!-- Mostrar otros detalles del curso -->
+    <a href="{% url 'detalle_curso' curso.nombre %}" class="btn">Ver Detalles</a>
     {% endfor %}
 {% endblock %}

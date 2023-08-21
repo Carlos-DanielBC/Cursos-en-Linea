@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 # from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.http import JsonResponse
@@ -84,6 +84,10 @@ def home(request):
 def lista_cursos(request):
     cursos = Curso.objects.all()
     return render(request, 'Gestion_de_curso/lista_cursos.html', {'cursos': cursos})
+
+def detalle_curso(request, curso_titulo):
+    curso = get_object_or_404(Curso, nombre=curso_titulo)
+    return render(request, 'curso_detail.html', {'curso': curso})
 
 
 def crear_curso(request):

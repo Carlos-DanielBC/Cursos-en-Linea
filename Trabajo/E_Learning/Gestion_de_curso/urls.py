@@ -12,4 +12,5 @@ urlpatterns = [
     path('logout/', views.close_sesion, name='logout'),
     path('home/', views.home, name='home'),
     path('obtener-datos-grafico/', views.obtener_datos_grafico, name='obtener_datos_grafico'),
+    path('curso/<str:curso_titulo>/', views.detalle_curso, name='detalle_curso'),
 ]
